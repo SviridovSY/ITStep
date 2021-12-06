@@ -1,0 +1,28 @@
+#include <iostream>
+#include <Windows.h>
+#include <string>
+
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	std::string game_play{};
+
+	std::cout << "Зачем ты сюда пришёл???" << std::endl;
+
+	//std::cin.getline(game_play);
+	getline(std::cin, game_play);
+
+	if (game_play == "Не твоё дело") {
+		std::cout << "Тогда ты не пройдёшь дальше этой двери!" << std::endl;
+	}
+	else if (game_play == "Я пришёл узнать твою тайну") {
+		std::cout << "Призрак исчезает и открывается замок в двери" << std::endl;
+	}
+	else {
+		std::cout << "Кажется ты не из этой истории.." << std::endl;
+	}
+
+}
