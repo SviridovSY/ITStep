@@ -1,0 +1,87 @@
+#include <iostream>
+#include <Windows.h>
+#include <string>
+
+
+
+//умножение
+void multiplication(float tray_num, float tray_num2){
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << tray_num * tray_num2 << std::endl;
+}
+
+//деление
+void division(float tray_num, float tray_num2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << tray_num / tray_num2 << std::endl;
+}
+
+//сложение
+void addition(float tray_num, float tray_num2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << tray_num + tray_num2 << std::endl;
+}
+
+//вычитание
+void subtraction(float tray_num, float tray_num2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << tray_num - tray_num2 << std::endl;
+}
+
+
+//void multi(float tray_num, float tray_num2, char action) {
+//	float result = 0;
+//	std::cout << "Ваш результат:" << std::endl;
+//
+//	result = tray_num action tray_num2;
+//
+//	std::cout << result << std::endl;
+//}
+
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	char action = '0';
+
+	float tray_num=0;
+	float tray_num2 = 0;
+	std::cout << "Пожалуйста введите первое число:" << std::endl;
+	std::cin >> tray_num;
+	
+	std::cout << "Пожалуйста введите второе число:" << std::endl;
+	std::cin >> tray_num2;
+
+	std::cout << "Пожалуйста выберите действие:" << std::endl;
+	std::cin >> action;
+
+	//char action std::cin.get();
+
+	//multi(tray_num, tray_num2, action);
+
+
+	if (action == '+')
+	{
+		addition(tray_num, tray_num2);
+	}
+	else if (action == '-')
+	{
+		subtraction(tray_num, tray_num2);
+	}
+	else if (action == '*')
+	{
+		multiplication(tray_num, tray_num2);
+	}
+	else if (action == '/')
+	{
+		division(tray_num, tray_num2);
+	}
+	else
+	{
+		std::cout << "неверное значение" << std::endl;
+	}
+
+
+}
