@@ -1,0 +1,21 @@
+std::ofstream out("C:\\New\\hello.txt", std::ios::app);
+	if (out.is_open())
+	{
+		out << ch << std::endl;
+	}
+	out.close();
+
+    
+
+    std::string line;
+    std::ifstream in("C:\\New\\hello.txt"); // окрываем файл для чтения
+    if (in.is_open())
+    {
+       
+        while (getline(in, line))
+        {
+            std::cout << line << std::endl;
+
+        }
+    }
+    in.close();
