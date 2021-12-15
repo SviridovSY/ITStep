@@ -1,0 +1,30 @@
+void ZP(int ch){
+    std::ofstream out;          // поток для записи
+    out.open("C:\\New\\hello.txt"); // окрываем файл для записи
+    if (out.is_open())
+    {
+        out << ch << std::endl;
+    }
+}
+
+
+int CZP(int z) {
+
+    int lineNum = 0;
+    int lineNum2 = 0;
+    int ForNum = 0;
+    int count = 0;
+
+    std::ifstream input("C:\\New\\hello.txt"); // окрываем файл для чтения
+
+    while (input >> lineNum);
+
+    ForNum = lineNum + z;
+    count++;
+
+    std::cout << lineNum + z << std::endl;
+
+    input.close();
+
+    ZP(ForNum);
+}
