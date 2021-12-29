@@ -1,0 +1,134 @@
+/*int i = 0;
+    int day = 0;
+    int d = 2;
+    int l = 2;
+    std::cout << "Ввести количество дней: " << std::endl;
+    std::cin >> day;
+    while (i<=day)
+    {
+        l = i * d + 15;
+        i++;
+ 
+    }
+    std::cout << l;*/
+
+
+
+
+    /*srand(2456);
+    int arr[10];
+    for ( int i = 0; i < 10; i++)
+    {
+        int num = rand();
+        if (i==0)
+        {
+            arr[i] = num % 2 == 1 ? num : num + 1;
+        }
+        else
+        {
+            arr[i] = rand();
+        }
+        std::cout << arr[i] << std::endl;
+    }
+    int j = 0;
+    int sum = 0;
+    while (arr[j] % 2 == 1)
+    {
+        sum += arr[j];
+        j++;
+    }
+    std::cout << sum << std::endl;*/
+
+
+//time(null)     -   google
+   // /*srand(23);
+   // int arr[7];
+   // for (int i = 0; i < 7; i++)
+   // {
+   //     
+   //     arr[i] = rand();
+   //
+   //     std::cout << arr[i] << std::endl;
+   // }
+
+   // int b = arr[0];
+   // int c = arr[0];
+   // int d = 0;
+   // int e = 0;
+   // for (int j = 1; j < 7; j++)
+   // {
+   //     if (b > arr[j])
+   //     {
+   //         b = arr[j];
+   //     }
+   //     if (c < arr[j])
+   //     {
+   //         c = arr[j];
+   //     }  
+   // }
+
+   // int size = sizeof(arr) / sizeof(arr[0]);
+   // for (int k = 0; k < size; k++)
+   // {
+   //     if (arr[k] != b && arr[k] != c)
+   //     {
+   //         d += arr[k];
+   //     }
+   //     e++;
+   // }
+
+
+   // std::cout << b << std::endl;
+   // std::cout << c << std::endl;
+   // std::cout << e << std::endl;
+   // std::cout << (d-b-c)/e << std::endl;*/
+
+
+
+
+    //int a = 5;
+    //a > 0 ? std::cout << "+" : std::cout << "-";
+
+    //a > 0 ? std::cout << "+" : a < 0 ? std::cout << "-" : std::cout << "0";
+    ////
+    //std::string res = a > 0 ? "+" : "-";
+    //std::cout << res;
+
+
+    
+
+
+
+
+
+srand(1);
+int a[4][4];
+ for (int i = 0; i < 4; i++) {
+     for (int j = 0; j < 4; j++)
+     {
+         a[i][j] = rand();
+         std::cout << a[i][j] << "\t";
+     }
+     std::cout << std::endl;
+ }
+
+ const int n = 4;
+ int sum = 0;
+ for (int i = 0; i < 4; i++) {
+
+
+
+     for (int j = 0; j < 4; j++){
+
+         if (i + j >= n - 1) {
+         
+             sum += a[i][j];
+
+         }
+
+         
+     }
+    
+ }
+
+ std::cout << sum  << std::endl;
