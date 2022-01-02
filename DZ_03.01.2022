@@ -1,0 +1,223 @@
+SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	//Задание 1
+	int a=0;
+
+	while (a <= 9)
+	{
+		std::cout << "Semyon" << std::endl;
+		a++;
+	}
+	std::cout << std::endl;
+
+
+	//Задание 2
+	int m = 1;
+	std::cout << "Таблица квадратов" << std::endl;
+
+	while (m <= 10)
+	{
+		std::cout << m << ' ';
+		std::cout << m*m << std::endl;
+		m++;
+	}
+	std::cout << std::endl;
+
+
+
+	//Задание 3
+	int b = 0;
+	std::cout << "Таблица квадратов нечетных чисел" << std::endl;
+
+	while (b <= 9)
+	{
+		if (b % 2 != 0)
+		{
+			std::cout << b << ' ';
+			std::cout << b * b << std::endl;
+			
+		}
+		b++;
+	}
+	std::cout << std::endl;
+
+	//Задание 4
+	float sum = 0;
+	float srok = 0;
+	float stavka = 0;
+	float q = 0;
+	float p = 0;
+	float plateg = 0;
+
+	std::cout << "Сумма: ";
+	std::cin >> sum;
+	std::cout << "Срок: ";
+	std::cin >> srok;
+	std::cout << "Процентная ставка: ";
+	std::cin >> stavka;
+
+	float srok2 = srok;
+	float p2 = 0;
+	
+	p = stavka / 100 / srok2;
+	std::cout << "Долг   ";
+	std::cout << "Процент   ";
+	std::cout << "Платеж   ";
+	std::cout << std::endl;
+	q = sum / srok; //12500
+	while (srok > 0) {
+		
+		p2 = sum * p;
+		plateg = q + p2;
+		std::cout << sum << ' ';
+		std::cout << p2 << ' ';
+		std::cout << plateg << ' ';
+		sum -= q;
+		srok--;
+		std::cout << std::endl;
+	}
+
+
+	//Задание 5
+	int w = 0;
+	int e = 2;
+	std::cout << "Таблица степеней двойки   ";
+	std::cout << std::endl;
+	while (w <= 10)
+	{
+		if (w == 0)
+		{
+			e = 1;
+
+		}
+		else
+		{
+			e *= 2;
+		}
+		std::cout << w << ' ';
+		std::cout << e << ' ';
+		std::cout << std::endl;
+		w++;
+	}
+	std::cout << std::endl;
+
+	//Задание 6
+	int r = 64;
+	int t = 8;
+	
+	while (t!=0)
+	{
+		int t2 = 8;
+		r = r-1;
+		while (t2 != 0)
+		{
+			if (r % 2 != 0)
+			{
+				std::cout << "*" ;
+			}
+			else
+			{
+				std::cout << " " ;
+			}
+			r--;
+			t2--;
+		}
+		t--;
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+
+	//Задание 7
+	int o = 7;
+	int arr[7];
+	int j = 0;
+	int k = 0;
+	float l = 0;
+
+	std::cout << "Ввод массива целых чисел" << std::endl;
+
+	for (int i = 0; i < o; i++)
+	{
+		std::cout << "a[";
+		std::cout << i;
+		std::cout << "] ->  " << std::endl;
+		std::cin >> j;
+		arr[i] = j;
+
+	}
+
+	std::cout << "Массив " << std::endl;
+	while (k<=6)
+	{
+		std::cout << arr[k] << ' ';
+		l += arr[k];
+		k++;
+	}
+	std::cout << std::endl;
+	std::cout << "Среднее арифметическое: ";
+	std::cout << l/o;
+	std::cout << std::endl;
+
+	
+	
+	//Задание 8
+	double arr[5];
+	int s = 0;
+	int d = 0;
+	double f = 0;
+
+	std::cout << "Ввод массива целых чисел" << std::endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << "a[";
+		std::cout << i;
+		std::cout << "] ->  " << std::endl;
+		std::cin >> s;
+		arr[i] = s;
+	}
+	std::cout << "================================" << std::endl;
+	while (d <= 4)
+	{
+		std::cout << arr[d] << ' ';
+		if (arr[d]!=0)
+		{
+			f++;
+		}
+		d++;
+	}
+	std::cout << std::endl;
+	std::cout << "В массиве ";
+	std::cout << f;
+	std::cout << " ненулевых элемента";
+	std::cout << std::endl;
+
+
+	//Задание 9
+	int arr[5];
+	int g = 0;
+	int h = 0;
+	int f = 0;
+
+	std::cout << "Ввод массива целых чисел в одну строку: " << std::endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		std::cin >> arr[i];
+	}
+	while (h<=4)
+	{
+		if (h==0)
+		{
+			f = arr[h];
+		}
+		if (f > arr[h])
+		{
+			f = arr[h];
+		}
+		h++;
+	}
+	std::cout << "Минимальный элемент массива: ";
+	std::cout << f << ' ';
+	std::cout << std::endl;
