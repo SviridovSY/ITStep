@@ -1,0 +1,147 @@
+////=============1
+	//int n;
+	//int t1 = 0;
+	//std::cout << "Введите число: ";
+	//std::cin >> n;
+
+	//while (n > 0)
+	//{
+	//    n = n / 10;
+	//    t1++;
+	//}
+	//std::cout << t1 << ' ';
+
+
+	//////==============2
+	//int n2;
+	//int t3 = 0;
+
+	//int och = 0;
+	//int och2 = 0;
+
+	//std::cout << "Введите число: ";
+	//std::cin >> n2;
+	//och2 = n2;
+
+	//while (n2 > 0)
+	//{
+
+
+	//	t3 = n2 % 10;
+
+	//	n2 /= 10;
+
+
+	//	if (n2 > 0) {
+	//		och = (och + t3) * 10;
+	//	}
+	//	else
+	//		och = och + t3;
+
+
+	//}
+
+	//////=============3
+	////std::cout << och2 << ' ';
+	//std::cout << och << ' ';
+
+	//if (och2 == och) {
+	//	std::cout << 1 << ' ';
+	//}
+	//else
+	//{
+	//	std::cout << 0 << ' ';
+	//}
+
+
+	//std::cout << std::endl;
+
+
+
+	 /*int NEWn = 0;
+	 int l = 0;
+	 int m = 0;
+
+	 std::cout << "Введите число: ";
+	 std::cin >> NEWn;
+	 while (NEWn > 0)
+	 {
+		 l++;
+		 m = l + m;
+		 NEWn = NEWn - 1;
+	 }
+	 std::cout << m;*/
+
+
+
+	 //========factorial
+	 /*int NEWn = 0;
+	 int l = 0;
+	 int m = 1;
+
+	 std::cout << "Введите число: ";
+	 std::cin >> NEWn;
+
+	 while (l < NEWn)
+	 {
+		 l++;
+		 m = l * m;
+	 }
+	 std::cout << m;*/
+
+
+
+	/*float NEWn = 0;
+	int l = 0;
+	float l2 = 0;
+	float m = 0;
+
+	std::cout << "Введите количество чисел последовательноти: ";
+	std::cin >> l;
+	l2 = l;
+
+	while (l > 0)
+	{
+		std::cout << "Вводите последовательноть: ";
+		std::cin >> m;
+		NEWn = NEWn + m;
+		l = l - 1;
+	}
+
+
+	m = NEWn / l2;
+	std::cout << m;*/
+
+
+    //Счастливое число
+	int m = 0;
+	int t3 = 0;
+	int sum1 = 0;
+	int sum2 = 0;
+	std::cout << "Введите число: ";
+	std::cin >> m;
+	for (int i = 1; i <= 6; i++)
+	{
+		t3 = m % 10;
+		m /= 10;
+
+		if (i<4)
+		{
+			sum1 += t3;
+		}
+		else
+		{
+			sum2 += t3;
+		}
+	}
+
+	if (sum1==sum2)
+	{
+		std::cout << "Счастливое число";
+		std::cout << std::endl;
+	}
+	else
+	{
+		std::cout << "Обычное число";
+		std::cout << std::endl;
+	}
