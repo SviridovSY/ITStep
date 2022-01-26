@@ -1,0 +1,51 @@
+void output(int* arr, int size) {
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << ' ';
+    }
+    std::cout << " \n";
+}
+
+
+
+int main() {
+
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+
+    srand(time(0));
+    const int size = 10;
+   
+    int arr[size];
+    int NewArray[size];
+    int minEl;
+
+
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = rand()  %  10;
+    }
+
+   output(arr, size);
+
+
+   for (int i = 0; i < size - 1; i++)
+   {
+       bool flag = true;
+       for (int j = 0; j < size; j++)
+       {
+           if (arr[i] == arr[j] && i != j)
+           {
+               flag = false;
+               break;
+           }
+
+       }
+
+       if (flag)
+       {
+           std::cout << arr[i] << " ";
+       }
+   }
+   }
