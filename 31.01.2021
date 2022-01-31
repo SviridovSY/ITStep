@@ -1,0 +1,217 @@
+float FC(float gr)
+{
+    return (gr - 32) / 1.8;
+}
+
+float DM(float d)
+{
+    return d * 25.4;
+}
+
+float KM(float m)
+{
+    return m * 1.60094;
+}
+
+float BR(float b)
+{
+    return b * (1000/136.4);
+}
+
+float CL(float r, float h)
+{
+    return 3.14 * (r*r) * h;
+}
+
+float MN(float a1, float a2)
+{
+    if (a1 > a2)
+    {
+        return a1;
+    }
+    else if (a1 < a2)
+    {
+        return a2;
+    }
+    else
+    {
+        return a1;
+    }
+}
+
+char Compar(int b1, int b2)
+{
+    if (b1 > b2)
+    {
+        return '>';
+    }
+    else if (b1 < b2)
+    {
+        return '<';
+    }
+    else
+    {
+        return '=';
+    }
+}
+
+int fact(int f)
+{
+   
+    int N = 0;
+    if (f < 0)
+    {
+        return 0;
+    }
+    else if (f == 0)
+    {
+        return 1;
+    }
+    else
+    {
+       
+        //while (f > 0)
+        //{
+
+           /* N = f * fact(f - 1);
+            std::cout << N << "\n";*/
+            return f * fact(f - 1);
+            //f--;
+        //}
+        
+    }
+   
+}
+
+int glasn(char c) 
+{
+    if (c == 'а' || c == 'е' || c == 'ё' || c == 'и' || c == 'о' || c == 'у' || c == 'э' || c == 'ю' || c == 'я' || c == 'ы')
+    {
+        return 1;
+    }
+    else if (c == 'б' || c == 'в' || c == 'г' || c == 'д' || c == 'ж' || c == 'з' || c == 'к' || c == 'л' || c == 'м' || c == 'н' || c == 'ф' || c == 'х' || c == 'ц' || c == 'ч' || c == 'ш' || c == 'щ')
+    {
+        return 0;
+    }
+}
+
+void upcase(std::string g)
+{
+    int q = 0;
+    char z = g[q];
+
+
+    while (g[q]) // пока не конец строки
+    {
+        z = g[q];
+        std::cout << (char)toupper(z);  // преобразовать строчную букву в прописную
+        q++;                          
+    }
+}
+
+
+int power(int a, int n) 
+{
+
+}
+
+
+int main() {
+
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    ////==========1
+    //float gr = 0;
+    //std::cout << "Введите значение по Фарингейту: \n";
+    //std::cin >> gr;
+    //std::cout << "\n";
+    //std::cout << "Значение по Цельсию: " << FC(gr) << "\n";
+
+
+    ////=========2
+    //float d = 0;
+    //std::cout << "Введите значение дюймов: \n";
+    //std::cin >> d;
+    //std::cout << "\n";
+    //std::cout << "Значение в миллиметрах: " << DM(d) << "\n";
+
+
+    ////=========3
+    //float m = 0;
+    //std::cout << "Введите значение миль: \n";
+    //std::cin >> m;
+    //std::cout << "\n";
+    //std::cout << "Значение в километрах: " << KM(m) << "\n";
+
+    ////=========4
+    //float b = 0;
+    //std::cout << "Введите значение стоимости за баррель: \n";
+    //std::cin >> b;
+    //std::cout << "\n";
+    //std::cout << "Значение стоимости за тонну: " << BR(b) << "\n";
+
+    ////=========5
+    //float r = 0;
+    //float h = 0;
+    //std::cout << "Введите значение радиуса цилиндра: \n";
+    //std::cin >> r;
+    //std::cout << "Введите значение высоты цилиндра: \n";
+    //std::cin >> h;
+    //std::cout << "\n";
+    //std::cout << "Значение объёма цилиндра: " << CL(r, h) << "\n";
+
+    ////=========6
+    //float a1 = 0;
+    //float a2 = 0;
+    //std::cout << "Введите значение первого числа: \n";
+    //std::cin >> a1;
+    //std::cout << "Введите значение второго числа: \n";
+    //std::cin >> a2;
+    //std::cout << "\n";
+    //std::cout << "Значение максимального числа: " << MN(a1, a2) << "\n";
+
+    ////=========7
+    //int b1 = 0;
+    //int b2 = 0;
+    //std::cout << "Введите значение первого числа: \n";
+    //std::cin >> b1;
+    //std::cout << "Введите значение второго числа: \n";
+    //std::cin >> b2;
+    //std::cout << "\n";
+    //std::cout << "Значение результата сравнения: " << Compar(b1, b2) << "\n";
+
+    ////=========8
+    //int f = 0;
+    //std::cout << "Введите число для вычисления факториала: \n";
+    //std::cin >> f;
+    //std::cout << "\n";
+    //std::cout << "Значение результата сравнения: " << fact(f) << "\n";
+
+    ////=========9
+    //char c;
+    //std::cout << "Введите букву: \n";
+    //std::cin >> c;
+    //std::cout << "\n";
+    //std::cout << "Результат: " << glasn(c) << "\n";
+    
+
+    ////=========10
+    //std::string g;
+    //std::cout << "Введите слово: \n";
+    //std::cin >> g;
+    //std::cout << "\n";
+    //upcase(g);
+
+    //=========11
+    int a = 0;
+    int n = 0;
+    std::cout << "Введите число a: \n";
+    std::cin >> a;
+    std::cout << "Введите  число n: \n";
+    std::cin >> n;
+    std::cout << "\n";
+    std::cout << "Значение результата сравнения: " << power(a, n) << "\n";
+
+
+}
