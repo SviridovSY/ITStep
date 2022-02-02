@@ -1,0 +1,253 @@
+
+//==========02.02.2022
+//// 
+////===============1
+//void mass(int[], int);
+//
+//void mass(int arr[], int Minsize)
+//{
+//  
+//    for (int i = 0; i < Minsize; i++)
+//    {
+//        arr[i] = rand() % 10;
+//        std::cout << arr[i] << ' ';
+//    }
+//
+//    std::cout << std::endl;
+//}
+//
+//
+////===============2
+//const int size = 5;
+//const int size3 = 3;
+//int min = 30;
+//int max = 60;
+//
+//void PrintMas(int arr[][size], int Minsize)
+//{
+//
+//    for (int i = 0; i < Minsize; i++)
+//    {
+//        for (int j = 0; j < Minsize; j++)
+//        {
+//            arr[i][j] = rand() % (max - min + 1) + min;
+//            std::cout << arr[i][j] << ' ';
+//        }
+//        std::cout << std::endl;
+//    }
+//}
+//
+//void PrintMas2(int arr[][size], int Minsize)
+//{
+//    int n = 0;
+//    for (int i = 0; i < Minsize; i++)
+//    {
+//        for (int j = 0; j < Minsize; j++)
+//        {
+//            if (n == 0)
+//            {
+//                n = arr[i][j];
+//            }
+//            else if (n > arr[i][j])
+//            {
+//                n = arr[i][j];
+//            }
+//        }
+//    }
+//    std::cout << n << std::endl;
+//}
+//
+//void PrintMas3(int arr[][size], int Minsize)
+//{
+//    int n = 0;
+//    for (int i = 0; i < Minsize; i++)
+//    {
+//        for (int j = 0; j < Minsize; j++)
+//        {
+//            if (n == 0)
+//            {
+//                n = arr[i][j];
+//            }
+//            else if (n < arr[i][j])
+//            {
+//                n = arr[i][j];
+//            }
+//        }
+//    }
+//    std::cout << n << std::endl;
+//}
+
+
+//===============3
+const int size3 = 3;
+char arr[size3][size3];
+int number1 = 0;
+int number2 = 0;
+int min = 1;
+int max = 6;
+void OutMas(int num) 
+{
+    for (int i = 0; i < size3; i++)
+    {
+        for (int j = 0; j < size3; j++)
+        { 
+                arr[i][j] = 'X';
+        }
+    }
+
+    if (num == 5)
+    {
+        arr[0][1] = 'o';
+        arr[1][0] = 'o';
+        arr[1][2] = 'o';
+        arr[2][1] = 'o';
+    }
+    else if (num == 4)
+    {
+        arr[0][1] = 'o';
+        arr[1][1] = 'o';
+        arr[1][0] = 'o';
+        arr[1][2] = 'o';
+        arr[2][1] = 'o';
+    }
+    else if (num == 3)
+    {
+        arr[0][0] = 'o';
+        arr[0][1] = 'o';
+        arr[0][2] = 'o';
+        arr[2][0] = 'o';
+        arr[2][1] = 'o';
+        arr[2][2] = 'o';
+    }
+    else if (num == 2)
+    {
+        arr[0][0] = 'o';
+        arr[0][1] = 'o';
+        arr[0][2] = 'o';
+        arr[1][1] = 'o';
+        arr[2][0] = 'o';
+        arr[2][1] = 'o';
+        arr[2][2] = 'o';
+    }
+    else if (num == 1)
+    {
+        arr[0][0] = 'o';
+        arr[0][1] = 'o';
+        arr[0][2] = 'o';
+        arr[1][0] = 'o';
+        arr[1][2] = 'o';
+        arr[2][0] = 'o';
+        arr[2][1] = 'o';
+        arr[2][2] = 'o';
+    }
+
+
+    for (int i = 0; i < size3; i++)
+    {
+        for (int j = 0; j < size3; j++)
+        {
+            std::cout << arr[i][j] << ' ';
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+
+
+}
+
+int pcB() 
+{
+    int pc = 0;
+    int number1 = rand() % (max - min + 1) + min;
+    int number2 = rand() % (max - min + 1) + min;
+
+    //std::cin >> number1;
+    OutMas(number1);
+    std::cout << std::endl;
+    OutMas(number2);
+    std::cout << std::endl;
+    pc = number1 + number2;
+
+    std::cout << pc << std::endl;
+    std::cout << std::endl;
+
+    return pc;
+}
+
+int userB()
+{
+    int user = 0;
+    char simvol;
+
+    std::cout << "Введите любую клавишу для броска: " << std::endl;
+    std::cin >> simvol;
+    std::cout << std::endl;
+    int number1 = rand() % (max - min + 1) + min;
+    int number2 = rand() % (max - min + 1) + min;
+
+   
+
+
+    OutMas(number1);
+    std::cout << std::endl;
+    OutMas(number2);
+    std::cout << std::endl;
+    user = number1 + number2;
+
+    std::cout << user << std::endl;
+    std::cout << std::endl;
+
+    return user;
+}
+//=====================^
+
+
+int main() {
+
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    //==========02.02.2022
+    // 
+    ////==========1
+    //srand(time(0));
+    //const int size1 = 4;
+    //const int size2 = 6;
+    //int arr1[size1];
+    //int arr2[size2];
+    //int Minsize = sizeof(arr1) / sizeof(arr1[0]);
+    //int Maxsize = sizeof(arr2) / sizeof(arr2[0]);
+
+    //mass(arr1, Minsize);
+    //mass(arr2, Maxsize);
+
+    ////==========2
+    //srand(time(0));
+    //
+    //int arr[size][size];
+
+    //PrintMas(arr, size);
+    //PrintMas2(arr, size);
+    //PrintMas3(arr, size);
+
+
+    //===============3
+    
+    char arr[size3][size3];
+
+    
+    int pcMAX = 0;
+    int user = 0;
+    int userMAX = 0;
+   
+    srand(time(0));
+
+
+
+    pcMAX += pcB();
+    std::cout << pcMAX << std::endl;
+    std::cout << std::endl;
+
+    userMAX += userB();
+    std::cout << userMAX << std::endl;
+    std::cout << std::endl;
