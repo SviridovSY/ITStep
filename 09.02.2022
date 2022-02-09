@@ -1,0 +1,39 @@
+const int a{ 46 };
+	const int b{ 18 };
+
+	int mass[a][b];
+
+	bool N{ true };
+	int quantity{ 0 };
+	int Perem{ 0 };
+
+	while (N)
+	{
+		quantity++;
+
+		for (int i = 0; i < a; i++)
+		{
+
+			for (int j = 0; j < b; j++)
+			{
+
+				if (mass[i][j] < 0)
+				{
+
+					Perem = mass[i][j];
+					mass[i][j] = quantity;
+
+				}
+				else
+				{
+					Perem = 0;
+				}
+
+			}
+
+
+		}
+
+	}
+
+	std::cout << quantity << std::endl;
