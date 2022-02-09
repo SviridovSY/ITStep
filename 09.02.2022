@@ -19,19 +19,21 @@ const int a{ 46 };
 
 				if (mass[i][j] < 0)
 				{
-
-					Perem = mass[i][j];
-					mass[i][j] = quantity;
-
+					if (Perem != mass[i][j])
+					{
+						Perem = mass[i][j];
+						mass[i][j] = quantity;
+					}
 				}
 				else
 				{
 					Perem = 0;
+					!N;
 				}
-
+				N = true;
 			}
 
-
+			N = true;
 		}
 
 	}
