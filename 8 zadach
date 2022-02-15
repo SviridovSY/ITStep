@@ -1,0 +1,153 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+
+int f(int m2, int m1, int m0)
+{
+	int m{ 0 };
+	m2 = m2 % 1000 / 100 * 100;
+	m1 = m1 % 100 / 10 * 10;
+	m0 = m0 % 10;
+	m = m2 + m1 + m0;
+	return m;
+}
+
+int f2(int x, int y)
+{
+	int w{ 0 };
+	if (y==0&&x!=0)
+	{
+		w = 12 / x;
+	}
+	else if (x==0&&y!=0)
+	{
+		w = 12 / y;
+	}
+	else if (x!=0&&y!=0)
+	{
+		w = 144 / (x * y);
+	}
+	return w;
+}
+
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	//===========Задание №1
+	int a{ 2 };
+	int b{ 0 };
+	int Rezult{ 0 };
+
+	//===1 итерация
+	b = a * a;
+	//===2 итерация
+	Rezult = b * b;
+	std::cout << "a в степени 4: " << Rezult << std::endl;
+
+	b = 0;
+	Rezult = 0;
+	//===1 итерация
+	b = a * a;
+	//===2 итерация
+	Rezult = b * b;
+	//===3 итерация
+	Rezult = Rezult * b;
+	std::cout << "a в степени 6: " << Rezult << std::endl;
+
+	b = 0;
+	int c{ 0 };
+	Rezult = 0;
+	//===1 итерация
+	b = a * a;
+	//===2 итерация
+	c = b * a;
+	//===3 итерация
+	Rezult = c * c;
+	//===4 итерация
+	Rezult = Rezult * Rezult;
+	//===5 итерация
+	Rezult = c * Rezult;
+	std::cout << "a в степени 15: " << Rezult << std::endl;
+
+
+	//===========Задание №2
+	int x{ 6 };
+	int y{ 8 };
+	int z{ 2 };
+	int s{ 0 };
+	Rezult = 0;
+
+	s = x * y;
+	z *= z;
+	Rezult = s / z;
+	std::cout << "Количество квадратов: " << Rezult << std::endl;
+
+	//===========Задание №3
+	a = 5;
+	b = 7;
+	c = 9;
+	if (a<b&&b<c)
+	{
+		std::cout << "Равенство a<b<c верное!" << std::endl;
+	}
+	else
+	{
+		std::cout << "Равенство a<b<c не верное!" << std::endl;
+	}
+	if (b > a && a > c)
+	{
+		std::cout << "Равенство b>a>c верное!" << std::endl;
+	}
+	else
+	{
+		std::cout << "Равенство b>a>c не верное!" << std::endl;
+	}
+
+	//===========Задание №4
+	c = 5;
+	bool N{ false };
+	if (a==b||b==c||a==c)
+	{
+		std::cout << "Равные числа имеются!" << std::endl;
+	}
+
+	//===========Задание №5
+	const int size1 = 7;
+	const int size2 = 4;
+	char arr[size1][size2];
+	for (int i = 0; i < size2; i++)
+	{
+		for (int j = 0; j < size1; j++)
+		{
+			std::cout << "*";
+		}
+		std::cout << std::endl;
+	}
+
+	//===========Задание №6
+	int min{ 1 };
+	int max{ 112 };
+	int step{ 3 };
+	Rezult = 1;
+	while (min<max)
+	{
+		min += step;
+		Rezult += min;
+	}
+	std::cout << Rezult << std::endl;
+
+	//===========Задание №7
+	int m2{256};
+	int m1{128};
+	int m0{64};
+	Rezult = f(m2, m1, m0);
+	std::cout << Rezult << std::endl;
+	
+	//===========Задание №8
+	x = 3;
+	y = 4;
+	Rezult = f2(x, y);
+	std::cout << Rezult << std::endl;
+}
