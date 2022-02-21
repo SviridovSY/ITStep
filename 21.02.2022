@@ -46,3 +46,117 @@
 		vremennaya1++;
 	}
 	//std::cout << Rezult1 << std::endl;
+	
+	
+	
+		/*int index{ 0 };
+
+	while (index != 51)
+	{
+		for (size_t i = 0; i < 50; i++)
+		{
+			for (size_t j = 0; j < 50; j++)
+			{
+				if (j == index)
+				{
+					std::cout << (char)20;
+				}
+				else
+				{
+					std::cout << (char)176;
+				}
+
+			}
+			std::cout << (char)13;
+			index++;
+			Sleep(1);
+		}
+
+		for (size_t i = 0; i < 50; i++)
+		{
+			for (size_t j = 0; j < 50; j++)
+			{
+				if (j == index)
+				{
+					std::cout << (char)20;
+				}
+				else
+				{
+					std::cout << (char)176;
+				}
+
+			}
+			std::cout << (char)13;
+			index--;
+			Sleep(1);
+		}
+	}
+
+	std::cout << std::endl;*/
+
+
+	int index{ 0 };
+
+	for (size_t i = 0; i < 20; i++)
+	{
+
+		for (size_t j = 0; j < 50; j++)
+		{
+			if (j == 20)
+			{
+				std::cout << (char)20;
+				Sleep(55);
+				std::cout << '\b';
+				Sleep(55);
+				std::cout << (char)176;
+			}
+			else
+			{
+				std::cout << (char)176;
+			}
+		}
+		std::cout << (char)13 << '\n';
+		Sleep(5);
+		index++;
+	}
+
+
+
+
+	/*int sec{ 1234 };
+	int in{ 0 };
+
+	while (sec != in)
+	{
+		std::cin >> in;
+
+	}
+	std::cout << "Game ower";*/
+
+
+
+
+	/*int a = 5;
+	int b = 3;
+
+	if (a<b)
+	{
+		std::cout << b << std::endl;
+
+	}
+	else
+	{
+		std::cout << a << std::endl;
+	}
+
+
+	int s{ 4 };
+	int d{ 6 };
+	int f{ 4 };
+
+	if (s==d || d==f || s==f)
+	{
+		std::cout << "yes" << std::endl;
+	}*/
+
+
