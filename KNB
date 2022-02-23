@@ -1,0 +1,133 @@
+void game() {
+
+	enum SSP
+	{
+		STONE = 1,
+		SCISSORS,
+		PAPER
+	};
+
+	// Суммы
+	size_t user{ 100 };
+	size_t first_bot{ 100 };
+	size_t second_bot{ 100 };
+
+	srand(time(0));
+
+	size_t first_bot_input{ 0 };
+	size_t second_bot_input{ 0 };
+
+	// --- Начало игры ---
+
+	// Проверить правильность ввода пользователем
+	size_t user_input{ 0 };
+	std::cout << "Input (STONE = 1 or SCISSORS = 2 or PAPER = 3): \n";
+	std::cin >> user_input;
+
+	while (user_input != 1 && user_input != 2 && user_input != 3)
+	{
+		std::cout << "Введен не верный символ, повторите ввод" << std::endl;
+		std::cin >> user_input;
+	}
+	//std::cout << SSP == user_input << std::endl;
+
+	// Сгенерировать ход первого бота
+	first_bot_input = 1 + rand() % 3;
+	std::cout << first_bot_input << std::endl;
+
+	// Сгенерировать ход второго бота
+	second_bot_input = 1 + rand() % 3;
+	std::cout << second_bot_input << std::endl;
+
+	// Определить победителя и начислить сумму.
+	if ((user_input == first_bot_input && user_input == second_bot_input) || (user_input != first_bot_input && user_input != second_bot_input && first_bot_input != second_bot_input))
+	{
+		std::cout << "dead heat" << std::endl;
+	}
+	else if (first_bot_input == second_bot_input && first_bot_input != user_input)//user_input
+	{
+
+		if ((user_input == SSP::PAPER && first_bot_input == SSP::STONE) || (user_input == SSP::STONE && first_bot_input == SSP::SCISSORS) || (user_input == SSP::SCISSORS && first_bot_input == SSP::PAPER))
+		{
+			user += 2;
+
+			first_bot--;
+			second_bot--;
+		}
+		else
+		{
+			first_bot++;
+			second_bot++;
+
+			user -= 2;
+		}
+	}
+	else if (user_input == second_bot_input && first_bot_input != user_input)//first_bot_input
+	{
+		if ((first_bot_input == SSP::PAPER && second_bot_input == SSP::STONE) || (first_bot_input == SSP::STONE && second_bot_input == SSP::SCISSORS) || (first_bot_input == SSP::SCISSORS && second_bot_input == SSP::PAPER))
+		{
+			first_bot += 2;
+
+			user--;
+			second_bot--;
+		}
+		else
+		{
+			user++;
+			second_bot++;
+
+			first_bot -= 2;
+		}
+	}
+	else if (user_input == first_bot_input && second_bot_input != user_input)//second_bot_input
+	{
+		if ((second_bot_input == SSP::PAPER && first_bot_input == SSP::STONE) || (second_bot_input == SSP::STONE && first_bot_input == SSP::SCISSORS) || (second_bot_input == SSP::SCISSORS && first_bot_input == SSP::PAPER))
+		{
+			second_bot += 2;
+
+			user--;
+			first_bot--;
+		}
+		else
+		{
+			user++;
+			first_bot++;
+
+			second_bot -= 2;
+		}
+	}
+
+	std::cout << "user: " << user << '\n';
+	std::cout << "second_bot: " << second_bot << '\n';
+	std::cout << "first_bot: " << first_bot << '\n';
+}
+
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	game();
+	
+	// Начать игру заново.
+	char raund;
+	int Qtt{ 0 };
+	std::cout << "Ещё раунд? Y / N " << std::endl;
+	std::cin >> raund;
+	if (raund == 'Y')
+	{
+		std::cout << "Введите количество раундов: " << std::endl;
+		std::cin >> Qtt;
+		while (Qtt > 0)
+		{
+			game();
+			Qtt--;
+		}
+		
+	}
+
+	return 0;
+	
+
+}
