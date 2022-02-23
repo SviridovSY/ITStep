@@ -1,0 +1,103 @@
+//===========Задание №1
+	int min{ 10 };
+	int max{ 88 };
+	int summ{ 0 };
+	while (min < max || min == max)
+	{
+		summ += min;
+		min++;
+	}
+	std::cout << summ << std::endl;
+	std::cout << std::endl;
+
+	//===========Задание №2
+	min = 5;
+	max = 13;
+	summ = 1;
+	while (min < max || min == max)
+	{
+		summ *= min;
+		min++;
+	}
+	std::cout << summ << std::endl;
+	std::cout << std::endl;
+
+	//===========Задание №3
+	min = 1;
+	max = 112;
+	summ = 0;
+	while (min < max || min == max)
+	{
+		summ += min;
+		min += 3;
+	}
+	std::cout << std::endl;
+	std::cout << summ << std::endl;
+	std::cout << std::endl;
+
+	//===========Задание №4
+	float c{ 2 };
+	float z{ 3 };
+	float vrem{ 0 };
+	float summ1{ 0 };
+	const int predel{ 10 };
+	while (z < predel || z == predel)
+	{
+		vrem = c / z;
+		summ1 += vrem;
+		c++;
+		z++;
+	}
+	std::cout << std::endl;
+	std::cout << summ1 << std::endl;
+	std::cout << std::endl;
+
+	//===========Задание №5
+	min = 1;
+	max = 1000;
+	summ = 0;
+	while (min < 101)
+	{
+		if (min == 1)
+		{
+			summ = min;
+			min++;
+		}
+		else
+		{
+			summ += min;
+			min++;
+			std::cout << summ << std::endl;
+		}
+	}
+	
+	//===========Задание №6
+	int n{15};
+	min = 1;
+	summ = 0;
+	int k{ 0 };
+	while (min < (n+1))
+	{
+		k = min * min;
+		summ += k;
+		min++;	
+	}
+	std::cout << std::endl;
+	std::cout << summ << std::endl;
+
+	//===========Задание №7
+	float c2{ 1 };
+	float z2{ 1 };
+	float vrem2{ 0 };
+	float summ2{ 0 };
+	const int predel2{ 5 };
+	while (z2 < predel2 || z2 == predel2)
+	{
+		vrem2 = c2 / z2;
+		summ2 += vrem2;
+		
+		z2++;
+	}
+	std::cout << std::endl;
+	std::cout << summ2 << std::endl;
+	std::cout << std::endl;
