@@ -1,0 +1,128 @@
+//===========Задание №1
+	int a{ 2 };
+	int b{ 3 };
+	float rezult{ 0 };
+	rezult = (a + 4*b)*(a - 3*b) + a*a;
+	std::cout << rezult << std::endl;
+
+	//===========Задание №2
+	int st{ 0 };
+	int P{ 0 };
+	int S{ 0 };
+	std::cout << "Введите сторону квадрата: " << std::endl;
+	std::cin >> st;
+	std::cout << std::endl;
+	P = st * 4;
+	S = st * st;
+	std::cout << "Перимерт: " << P << std::endl;
+	std::cout << "Площадь: " << S << std::endl;
+	std::cout << std::endl;
+
+	//===========Задание №3
+	float priceK{ 0 };
+	float priceP{ 0 };
+	float total1{ 0 };
+	float total2{ 0 };
+	std::cout << "Введите стоимость за 1 кг конфет: " << std::endl;
+	std::cin >> priceK;
+	std::cout << std::endl;
+	std::cout << "Введите стоимость за 1 кг печенья: " << std::endl;
+	std::cin >> priceP;
+	std::cout << std::endl;
+	total1 = priceK / 1000 * 300 + priceP / 1000 * 400;
+	std::cout << "Стоимость 1-й покупки: " << total1 << std::endl;
+	total2 = (priceK * 2 + priceP * 1.8) * 3;
+	std::cout << "Стоимость 2-й покупки: " << total2 << std::endl;
+
+	//===========Задание №4
+	a = 0;
+	b = 0;
+	std::cout << "Введите первое число: " << std::endl;
+	std::cin >> a;
+	std::cout << "Введите второе число: " << std::endl;
+	std::cin >> b;
+	if (a>b)
+	{
+		std::cout << "Наибольшее число: " << a << std::endl;
+	}
+	else
+	{
+		std::cout << "Наибольшее число: " << b << std::endl;
+	}
+
+	//===========Задание №5
+	a = 0;
+	b = 0;
+	int ost{ 0 };
+	std::cout << "Введите первое число: " << std::endl;
+	std::cin >> a;
+	std::cout << "Введите второе число: " << std::endl;
+	std::cin >> b;
+	ost = a % 2;
+	if (a != 10 && b != 10 && ost == 0)
+	{
+		std::cout << a + b << std::endl;
+	}
+	else
+	{
+		std::cout << a * b << std::endl;
+	}
+
+	//===========Задание №6
+	a = 0;
+	b = 0;
+	int c{ 0 };
+	int ost1{ 0 };
+	int ost2{ 0 };
+	std::cout << "Введите первое число: " << std::endl;
+	std::cin >> a;
+	std::cout << "Введите второе число: " << std::endl;
+	std::cin >> b;
+	std::cout << "Введите третье число: " << std::endl;
+	std::cin >> c;
+	ost1 = a % 3;
+	ost2 = b % 3;
+	if (a > 10 && b > 10 && c > 10 && ost1 == 0 && ost2 == 0)
+	{
+		std::cout << "yes" << std::endl;
+	}
+	else
+	{
+		std::cout << "no" << std::endl;
+	}
+
+	//===========Задание №7
+	a = 0;
+	b = 0;
+	c = 0;
+	std::cout << "Введите первое число: " << std::endl;
+	std::cin >> a;
+	std::cout << "Введите второе число: " << std::endl;
+	std::cin >> b;
+	std::cout << "Введите третье число: " << std::endl;
+	std::cin >> c;
+	if (a == b || a == c || b == c)
+	{
+		std::cout << "yes" << std::endl;
+	}
+
+	//===========Задание №8
+	a = 0;
+	int a1{ 0 };
+	int a2{ 0 };
+	int a3{ 0 };
+	int a4{ 0 };
+	std::cout << "Введите четырехзначное число: " << std::endl;
+	std::cin >> a;
+	a1 = a % 10000 / 1000;
+	a2 = a % 1000 / 100;
+	a3 = a % 100 / 10;
+	a4 = a % 10;
+	std::cout << a1 << std::endl;
+	std::cout << a2 << std::endl;
+	std::cout << a3 << std::endl;
+	std::cout << a4 << std::endl;
+	if (a1 > a2 && a2 > a3 && a3 > a4)
+	{
+		std::cout << "yes" << std::endl;
+	}
