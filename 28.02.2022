@@ -1,0 +1,168 @@
+
+void func_triangle(double x, double y, double& z)
+{
+	z = sqrt((x * x + y * y));
+}
+
+double f3(double x1, double y1, double x2, double y2)
+{
+	double a1{ 0 }, a2{ 0 }, h{ 0 };
+	a1 = (x2 - x1);
+	a2 = (y2 - y1);
+	h = sqrt(a1 * a1 + a2 * a2);
+	return h;
+}
+
+int f(int x, int y, int z)
+{
+	int a{ 0 };
+	a = x * 100 + y * 10 + z;
+	return a;
+}
+
+int f2(int x = 5, int y = 6, int z = 7)
+{
+	int a{ 0 };
+	a = x * 100 + y * 10 + z;
+	return a;
+}
+
+int f()
+{
+	return 345;
+}
+
+int f(int x, int y)
+{
+	return x + y;
+}
+
+double f(double a1, double a2, double b = 0)
+{
+	b = a1 - a2;
+	return b;
+}
+
+void f(double& a, double& b, double c, double q)
+{
+	a = cos(q) * c;
+	b = sin(q) * c;
+}
+
+void swap(int& a, int& b)
+{
+	int c{ 0 };
+	c = a;
+	a = b;
+	b = c;
+}
+
+void swap(int& a, int& b, int& s)
+{
+	int perem1{ 0 };
+	perem1 = a;
+	a = b;
+	b = s;
+	s = perem1;
+
+}
+
+int f(int& a, int& b, int x, int y)
+{
+	if (y == 0)
+	{
+		return y;
+	}
+	a = x * y;
+	b = x / y;
+
+	return 1;
+}
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	//===========задание №1
+	double c{ 3 }, d{ 2 }, g{ 0 };
+	
+	func_triangle(c, d, g);
+	std::cout << g << std::endl;
+
+
+	//===========задание №2
+	double x1{ 2 }, y1{ 3 }, x2{ 5 }, y2{ 11 }, h{ 0 };
+	
+	h = f3(x1, y1, x2, y2);
+	std::cout << h << std::endl;
+
+
+	//===========задание №3
+	int m2{ 2 }, m1{ 3 }, m0{ 1 }, m{ 0 };
+
+	m = f(m2, m1, m0);
+	std::cout << m << std::endl;
+
+
+	//===========задание №4
+	m = 0;
+	m = f2();
+	std::cout << m << std::endl;
+
+
+	//===========задание №5
+	m = 0;
+	m = f();
+	std::cout << m << std::endl;
+
+
+	//===========задание №6
+	int u{ 0 }, s1{ 3 }, s2{ 4 };
+	double v{ 10 }, d1{ 20.5 }, d2{ 10.5 };
+	u = f(s1, s2);
+	v = f(d1, d2, v);
+
+	std::cout << u << std::endl;
+	std::cout << v << std::endl;
+
+
+	//===========задание №7
+	double a3{ 0 }, b3{ 0 }, c3{ 33 }, q3{ 45 };
+	f(a3, b3, c3, q3);
+	std::cout << a3 << std::endl;
+	std::cout << b3 << std::endl;
+
+
+	//===========задание №8
+	int a{ 2 }, b{ 5 };
+	swap(a, b);
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+
+
+	//===========задание №9
+	a = 1;
+	b = 2;
+	int s{ 3 };
+	swap(a, b, s);
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << s << std::endl;
+
+	
+	//===========задание №10
+	a = 0;
+	b = 0;
+	int x{ 6 };
+	int y{ 2 };
+	int r{ 0 };
+	r = f(a, b, x, y);
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << r << std::endl;
+
+	return 0;
+
+}
