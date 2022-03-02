@@ -1,0 +1,184 @@
+
+int kub(int x)
+{
+	return x * x * x;
+}
+
+int summ(int x, int y)
+{
+	return x + y;
+}
+
+int product(int x, int y)
+{
+	return x * y;
+}
+
+int comparison(int x, int y)
+{
+	if (x < y)
+	{
+		return y;
+	}
+	else
+	{
+		return x;
+	}
+}
+
+int comparison(int x, int y, int z)
+{
+	if (x > y && x > z)
+	{
+		return x;
+	}
+	else if(y > x && y > z)
+	{
+		return y;
+	}
+	else
+	{
+		return z;
+	}
+}
+
+int summ_arr(int arr[], int size)
+{
+	int summ{ 0 };
+	for (size_t i = 0; i < size; i++)
+	{
+		summ += arr[i];
+	}
+	return summ;
+}
+
+int comp_arr(int arr[], int size)
+{
+	int summ{ 1 };
+	for (size_t i = 0; i < size; i++)
+	{
+		summ *= arr[i];
+	}
+	return summ;
+}
+
+void assignment(int arr2[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		arr2[i] = rand();
+	}
+	for (size_t i = 0; i < size; i++)
+	{
+		std::cout << arr2[i] << std::endl;
+	}
+}
+
+bool evenodd(int x)
+{
+	return x % 2;
+}
+
+int prost(int z)
+{
+	for (int i = 2; i <= z / 2; i++)
+	{
+		if ((z % i) == 0)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+
+int f(int n)
+{
+	int x{ 0 };
+	int y{ 0 };
+	if (n==0)
+	{
+		return 0;
+		
+	}
+	else if (n==1)
+	{
+		return 1;
+	}
+	else
+	{
+		x = f(n - 1);
+		y = f(n - 2);
+		return x + y;
+
+	}
+	
+}
+
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	srand(time(0));
+
+	int n{ 0 };
+
+	while (n < 21)
+	{
+		std::cout << f(n) << std::endl;
+		n++;
+	}
+
+
+	//===1
+	int x{ 2 };
+	int ret{ 0 };
+	ret = kub(x);
+	std::cout << ret << std::endl;
+
+	//===2
+	int y{ 5 };
+	int rezult{ 0 };
+	rezult = summ(x, y);
+	std::cout << rezult << std::endl;
+
+	//===3
+	std::cout << product(x, y) << std::endl;
+
+	//===4
+	rezult = 0;
+	rezult = comparison(x, y);
+	std::cout << rezult << std::endl;
+
+	//===5
+	rezult = 0;
+	int z{ 3 };
+	rezult = comparison(x, y, z);
+	std::cout << rezult << std::endl;
+
+	//===6
+	int arr[]{ x, y, z };
+	int size = 3;
+	std::cout << summ_arr(arr, size) << std::endl;
+
+	//===7
+	std::cout << comp_arr(arr, size) << std::endl;
+
+	//===8
+	int arr2[]{0,0,0};
+	assignment(arr2, size);
+
+	//===9
+	std::cout << evenodd(y) << std::endl;
+
+	//===10
+	std::cout << prost(y) << std::endl;
+
+
+
+
+	return 0;
+
+}
