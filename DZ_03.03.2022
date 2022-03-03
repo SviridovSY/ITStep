@@ -1,0 +1,202 @@
+
+int f()
+{
+	int ab{ 0 };
+	int bc{ 0 };
+	int weight{ 0 };
+	int volume{ 300 };
+	int fuel{ 0 };
+	int fuel_second{ 0 };
+	int km{ 0 };
+	int summ_km{ 0 };
+	
+	std::cout << "Введите расстояние A/B: ";
+	std::cin >> ab;
+	std::cout << "Введите расстояние B/C: ";
+	std::cin >> bc;
+	std::cout << "Введите вес груза: ";
+	std::cin >> weight;
+
+	//===расход топлива
+	if (weight < 500 || weight == 500)
+	{
+		fuel = 1;
+	}
+	else if((weight > 500 && weight < 1000) || weight == 1000)
+	{
+		fuel = 4;
+	}
+	else if ((weight > 1000 && weight < 1500) || weight == 1500)
+	{
+		fuel = 7;
+	}
+	else if ((weight > 1500 && weight < 2000) || weight == 2000)
+	{
+		fuel = 9;
+	}
+	else if (weight > 2000)
+	{
+		fuel = 0;
+		return -1;
+	}
+
+	km = volume / fuel;
+	summ_km = ab + bc;
+	if (km < ab)
+	{
+		return -1;
+	}
+	if (km > summ_km || km == summ_km)
+	{
+		fuel_second = 0;
+		return 0;
+	}
+	else
+	{
+		fuel_second = (summ_km - km) * fuel;
+		if (fuel_second > volume)
+		{
+			return -1;
+		}
+		else
+		{
+			return fuel_second;
+		}
+	}
+	 
+
+
+}
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	//=====Счастливое число
+	int m = 0;
+	int t = 0;
+	int t3 = 0;
+	int sum1 = 0;
+	int sum2 = 0;
+	std::cout << "Введите число: ";
+	std::cin >> m;
+	t = m;
+	int n{ 1 };
+	while ((t /= 10) > 0) n++;
+
+	if (n != 6)
+	{
+		std::cout << "Введено некорректное число!" << std::endl;
+	}
+	else
+	{
+		for (int i = 1; i <= 6; i++)
+		{
+			t3 = m % 10;
+			m /= 10;
+
+			if (i < 4)
+			{
+				sum1 += t3;
+			}
+			else
+			{
+				sum2 += t3;
+			}
+		}
+
+		if (sum1 == sum2)
+		{
+			std::cout << "Счастливое число";
+			std::cout << std::endl;
+		}
+		else
+		{
+			std::cout << "Обычное число";
+			std::cout << std::endl;
+		}
+	}
+
+
+	//=====2
+	std::cout << "Введите число: ";
+	std::cin >> m;
+	t = m;
+	n = 1;
+	int x1{ 0 };
+	int x2{ 0 };
+	int x3{ 0 };
+	int x4{ 0 };
+	int perem1{ 0 };
+	int perem2{ 0 };
+	while ((t /= 10) > 0) n++;
+	if (n != 4)
+	{
+		std::cout << "Введено некорректное число!" << std::endl;
+	}
+	else
+	{
+		for (int i = 1; i <= 4; i++)
+		{
+			t3 = m % 10;
+			m /= 10;
+
+			if (i == 1)
+			{
+				x1 = t3;
+			}
+			else if (i == 2)
+			{
+				x2 += t3;
+			}
+			else if (i == 3)
+			{
+				x3 += t3;
+			}
+			else if (i == 4)
+			{
+				x4 += t3;
+			}
+			
+		}
+		std::cout << x3 << x4 << x1 << x2 << std::endl;
+	}
+
+	//======3
+	int z{ 0 };
+	for (size_t i = 1; i < 8; i++)
+	{
+		std::cout << "Введите число " << i << ": ";
+		std::cin >> m;
+		if (z < m)
+		{
+			z = m;
+		}
+	}
+	std::cout << z << std::endl;
+
+
+	//=====4
+	int q{ 0 };
+	q = f();
+	if (q == 0)
+	{
+		std::cout << "Дозаправка не требуется" << std::endl;
+	}
+	else if (q < 0)
+	{
+		std::cout << "Полёт невозможен" << std::endl;
+	}
+	else
+	{
+		std::cout << "Количество топлива для дозаправки: " << q << std::endl;
+	}
+	
+	
+
+
+
+	return 0;
+
+}
