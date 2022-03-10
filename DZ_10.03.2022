@@ -1,0 +1,202 @@
+int func(int x)
+{
+	int x2{ 0 };
+	x2 = x * x * x;
+	return x2;
+}
+
+int func(int x, int y)
+{
+	if (x > y)
+	{
+		return x;
+	}
+	else
+	{
+		return y;
+	}
+}
+
+bool comparison(int z)
+{
+	int q = z % 2;
+	if (q > 0)
+	{
+		return false;
+
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void addition(int x, int y)
+{
+	std::cout << "Значение от сложения: " << x + y << std::endl;
+}
+
+void multiplication(int x, int y)
+{
+	std::cout << "Значение от произведения: " << x * y << std::endl;  
+}
+
+void subtraction(double x, double y)
+{
+	std::cout << "Значение от вычитания: " << x - y << std::endl;
+}
+
+void division(double x, double y)
+{
+	std::cout << "Значение от деления: " << x / y << std::endl;
+}
+
+void func_operations(int x, int y)
+{
+	int z{ 0 };
+	std::cout << "Сложение:     1" << std::endl;
+	std::cout << "Произведение: 2" << std::endl;
+	std::cout << "Вычитание:    3" << std::endl;
+	std::cout << "Деление:      4" << std::endl;
+	std::cout << "Введите значение действия: " << std::endl;
+	std::cin >> z;
+
+	if (z == 1)
+	{
+		addition(x, y);
+	}
+	else if (z == 2)
+	{
+		multiplication(x, y);
+	}
+	else if (z == 3)
+	{
+		subtraction(x, y);
+	}
+	else if (z == 4)
+	{
+		division(x, y);
+	}
+}
+
+void rectangle()
+{
+	const int n{ 3 };
+	const int k{ 6 };
+	char arr[n][k];
+	for (size_t i = 0; i < n; i++)
+	{
+		for (size_t j = 0; j < k; j++)
+		{
+			arr[i][j] = char(177);
+			std::cout << arr[i][j];
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+
+void prime_number(int x)
+{
+	x = 95;
+	bool prime{false};
+	int q = x % 2;
+
+	if (x == 1 || x == 2 || x == 3)
+	{
+		prime = true;
+	}
+	else if (q > 0)//положительные числа отсекаем
+	{
+		q = x % 3;
+		if (q > 0)
+		{
+			q = x % 5;
+			if (q > 0)
+			{
+				q = x % 7;
+				if (q > 0)
+				{
+					prime = true;
+				}
+				else
+				{
+					prime = false;
+				}
+			}
+			else
+			{
+				prime = false;
+			}
+		}
+		else
+		{
+			prime = false;
+		}
+	}
+	else
+	{
+		prime = false;
+	}
+
+	std::cout << "Значение числа: " << x << " \n";
+	std::cout << prime << "  -  число простое = 1 / число составное = 0" << std::endl;
+	
+}
+
+int factorial(int i)
+{
+	if (i == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return i * factorial(i - 1);
+
+	}
+}
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	//======1
+	int x{ 3 };
+	std::cout << func(x) << std::endl;
+
+	//======2
+	int y{ 5 };
+	std::cout << func(x, y) << std::endl;
+
+	//======3
+	int z{ 235 };
+	std::cout << comparison(z) << std::endl;
+
+	//======4
+	x = 0;
+	y = 0;
+	std::cout << "Введите первое число: " << std::endl;
+	std::cin >> x;
+	std::cout << std::endl;
+	std::cout << "Введите второе число: " << std::endl;
+	std::cin >> y;
+	std::cout << std::endl;
+	func_operations(x, y);
+	std::cout << std::endl;
+
+	//======5
+	rectangle();
+	
+	//======6
+	prime_number(x);
+
+	//======7
+	x = 6;
+	std::cout << factorial(x) << std::endl;
+
+
+	return 0;
+
+}
