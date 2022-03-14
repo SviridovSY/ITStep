@@ -1,0 +1,214 @@
+void degree(int x, int y)
+{
+	int tmp = x;
+	for (int i = 1; i < y; i++) {
+		x *= tmp;
+	}
+
+	std::cout << x << std::endl;
+}
+
+int sum(int x, int y)
+{
+	int sum{ 0 };
+	for (size_t i = x+1; i < y; i++)
+	{
+		sum += i;
+	}
+	
+	return sum;
+}
+
+bool perfect(int num) 
+{
+	int sum = 0;
+	
+	for (int j = 1; j < num; j++) {
+		if (num % j == 0)
+			sum += j;
+	}
+	
+	if (sum == num) 
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+void issymb(char s) 
+{
+	if ((s >= '0' && s <= '9') || (s >= 'A' && s <= 'Z')
+		|| (s >= 'a' && s <= 'z'))
+	{
+		std::cout << " параметр алфавитно-цифровой" << std::endl;
+	
+	}
+	else
+	{
+		std::cout << " параметр НЕ алфавитно-цифровой" << std::endl;
+	}
+}
+
+void rounding(int x, float y)
+{
+	std::cout << std::fixed << std::setprecision(x) << y;
+}
+
+void lucky(int m)
+{
+	int t = 0;
+	int t3 = 0;
+	int sum1 = 0;
+	int sum2 = 0;
+
+	t = m;
+	int n{ 1 };
+	while ((t /= 10) > 0) n++;
+
+	if (n != 6)
+	{
+		std::cout << "Введено некорректное число!" << std::endl;
+	}
+	else
+	{
+		for (int i = 1; i <= 6; i++)
+		{
+			t3 = m % 10;
+			m /= 10;
+
+			if (i < 4)
+			{
+				sum1 += t3;
+			}
+			else
+			{
+				sum2 += t3;
+			}
+		}
+
+		if (sum1 == sum2)
+		{
+			std::cout << "Счастливое число";
+			std::cout << std::endl;
+		}
+		else
+		{
+			std::cout << "Обычное число";
+			std::cout << std::endl;
+		}
+	}
+}
+
+bool LeapYear(int year)
+{
+	bool res = false;
+	if (year % 4 == 0)
+		res = true;
+	if (year % 100 == 0)
+		res = false;
+	if (year % 400 == 0)
+		res = true;
+	return res;
+}
+
+int Date(int d, int m, int y)
+{
+	int k = d;
+	switch (m - 1)
+	{
+	case 12: k += 31;
+	case 11: k += 30;
+	case 10: k += 31;
+	case  9: k += 30;
+	case  8: k += 31;
+	case  7: k += 31;
+	case  6: k += 30;
+	case  5: k += 31;
+	case  4: k += 30;
+	case  3: k += 31;
+	case  2: if (LeapYear(y)) k += 29; else k += 28;
+	case  1: k += 31;
+	}
+	k += (y - 1) * 365 + ((y - 1) / 4);
+	return k;
+}
+
+int difference(int day1, int day2, int mon1, int mon2, int year1, int year2)
+{
+	int k = Date(day2, mon2, year2) - Date(day1, mon1, year1);
+	return k;
+}
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	//======1
+	int x{ 5 };
+	int y{ 3 };
+	degree(x, y);
+
+	//======2
+	x = 2;
+	y = 15;
+	int rezult{ 0 };
+	rezult = sum(x, y);
+	std::cout << rezult << std::endl;
+
+	//======3
+	y = 1000;
+	for (int i = x; i < y; ++i) {
+		if (perfect(i)) {
+			std::cout << i << std::endl;
+		}
+	}
+
+	//======4
+
+	//======5
+	char ch;
+	std::cout << "Please enter char ";
+	std::cin >> ch;
+	issymb(ch);
+
+	//======6
+	x = 9;
+	float c{ 0 };
+	c = 0.1625485955444845454;
+	rounding(x, c);
+	std::cout << std::endl;
+	
+	//======7
+	int m = 0;
+	std::cout << "Введите число: ";
+	std::cin >> m;
+	lucky(m);
+
+	//======8
+	int d1, d2, m1, m2, y1, y2;
+	std::cout << "Введите день первой даты: ";
+	std::cin >> d1;
+	std::cout << "Введите месяц первой даты: ";
+	std::cin >> m1;
+	std::cout << "Введите год первой даты: ";
+	std::cin >> y1;
+	std::cout << "Введите день второй даты: ";
+	std::cin >> d2;
+	std::cout << "Введите месяц второй даты: ";
+	std::cin >> m2;
+	std::cout << "Введите год второй даты: ";
+	std::cin >> y2;
+	std::cout << "Разность дат: " << difference(d1, d2, m1, m2, y1, y2) << " дней\n";
+
+	
+
+
+	return 0;
+
+}
