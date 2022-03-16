@@ -1,0 +1,129 @@
+
+	////======1
+	//int x{ 3 };
+	//int y{ 5 };
+	//int z{ 0 };
+	//int* p{ nullptr };
+	//int* t{ nullptr };
+
+	//p = &x;
+	//t = &y;
+	//z = *p + *t;
+	//std::cout << z << std::endl;
+	//std::cout << &z << std::endl;
+
+
+	////======2
+	//int a = 2, b = 5, c = 10;
+	//int* p1, * p22 = &b;
+	//p1 = &c;
+	//std::cout << *p1 - *p22;
+
+
+	////======3
+	//double a = 2.5, b = 5.2, res;
+	//double* p1 = &a, *p2 = &b;
+	//res = *p1 - *p2;
+	//std::cout << res << std::endl;
+
+	srand(time(0));
+
+	////======4
+	const int SIZE = 10;
+	int A[SIZE] = { 1,2,3,4,5,6,7,8,9,10 };
+	int* p = A;
+	//for (int i = 0; i < SIZE; i++)
+	//{
+	//	std::cout << *(p+i);
+	//}
+	//std::cout << std::endl;
+
+	////======5
+	//for (int j = 0; j < SIZE; j++)
+	//{
+	//	*(p + j) = rand();
+	//}
+	//for (int j = 0; j < SIZE; j++)
+	//{
+	//	std::cout << *(p + j);
+	//	std::cout << std::endl;
+	//}
+
+	////======6
+	//int x{ -22 };
+	//int B[SIZE] = {54,13,-22,6,55,48,10,9,-30,85};
+	//int* t = B;
+	//for (size_t i = 0; i < SIZE; i++)
+	//{
+	//	if ((*(t+i)%2 == 0) && (*(t + i) < 0))
+	//	{
+	//		std::cout << &(*(t+i));
+	//		std::cout << std::endl;
+	//	}
+	//}
+	//std::cout << std::endl;
+
+	////======7
+	//int q{ 0 };
+	//const int size2{ 16 };
+	//int C[size2] = { 12,33,26,54,96,5,44,98,51,20,11,57,41,36,32,2 };
+	//int* w = C;
+	//for (size_t z = 0; z < size2; z++)
+	//{
+	//	if (z == 0)
+	//	{
+	//		q = *(w + z);
+	//	}
+	//	if (q > *(w + z))
+	//	{
+	//		q = *(w + z);
+	//	}
+	//}
+	//std::cout << q;
+	//std::cout << std::endl;
+
+	//======8
+	int perem{ 0 };
+	const int size3{ 20 };
+	int arr[size3];
+	int* r = arr;
+	for (int j = 0; j < size3; j++)
+	{
+		arr[j] = rand();
+		std::cout << arr[j];
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	for (size_t i = 0; i < size3; i++)
+	{
+		if (i%2 == 1)
+		{
+			if (i == 1)
+			{
+				perem = *(r + i);
+			}
+
+			if (perem > *(r + i))
+			{
+				*(r + i - 2) = *(r + i);
+				*(r + i) = perem;
+			}
+
+			std::cout << arr[i];
+			std::cout << std::endl;
+		}
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	for (int k = 0; k < size3; k++)
+	{
+		
+		std::cout << arr[k];
+		std::cout << std::endl;
+	}
+
+
+
+
