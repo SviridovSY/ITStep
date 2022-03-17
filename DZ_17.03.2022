@@ -1,0 +1,66 @@
+void rectangle(int &h, int &w)
+{
+	for (size_t i = 0; i < h; i++)
+	{
+		for (size_t j = 0; j < w; j++)
+		{
+			std::cout << '*';
+		}
+		std::cout << std::endl;
+	}
+}
+
+void circle(int& r)
+{
+	int d = r * 2;
+	double di;
+	di = 1.0 / r;
+	unsigned n;
+	for (int i = int(r);i >= -int(r);--i) 
+	{
+		n = static_cast<int>(cos(asin(di * abs(int(i)))) * r);
+		for (unsigned j = 0;j <= r - n;++j) 
+		{ 
+			std::cout << " "; 
+		}
+		std::cout << "*   ";
+		for (unsigned j = 0;j < 2 * n;++j) 
+		{ 
+			std::cout << " "; 
+		}
+		std::cout << "   *\n";
+	}
+}
+
+void triangle(int x)
+{
+	for (std::size_t i = 0; i < x; ++i)
+	{
+		for (std::size_t j = 0; j <= i; ++j)
+			std::cout << "*";
+		std::cout << std::endl;
+	}
+}
+
+int main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	//======1
+	int h{ 3 };
+	int w{ 5 };
+	rectangle(h, w);
+
+	//======2
+	int r{ 3 };
+	circle(r);
+
+	//======3
+	triangle(w);
+
+
+	return 0;
+
+}
