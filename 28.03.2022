@@ -1,0 +1,139 @@
+
+/* Печать массива в консоль */
+void show(int arr[], int len)
+{
+	for (int i = 0; i < len; i++)
+		printf(" %d", arr[i]);
+	std::cout << std::endl;
+}
+
+void show_back(int arr[], int len)
+{
+	for (int i = len-1; i > -1; i--)
+		printf(" %d", arr[i]);
+	std::cout << std::endl;
+}
+
+void pointer_arithmetic(int* array, int rows, int columns)
+{
+	/* Вывод элементов массива */
+	for (int i = 0; i < rows; i++)  // цикл по строкам
+	{
+		for (int j = 0; j < columns; j++)  // цикл по столбцам
+		{
+			
+			if (i == (rows - 1) && j == (columns - 1))
+			{
+				printf("%3d ", *(array + i * columns + j)); // знакоместо под элемент массива
+			}
+			if (i == 0 && j == 0)
+			{
+				printf("%3d ", *(array + i * columns + j)); // знакоместо под элемент массива
+			}
+			
+		}
+		printf("\n");
+	}
+	printf("\n---------------------------------\n");
+}
+
+void replacement(int* array, int rows, int columns)
+{
+	int perem{ 0 };
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < columns; j++)
+		{
+			std::cout << array[columns * i + j] << std::endl;
+			std::cout << *(array + i * columns + j) << std::endl;
+		}
+
+	}
+}
+
+int main() {
+
+	/*SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);*/
+	
+	/* Объявляем пустой указатель */
+	int* array = nullptr;
+
+	/* Определяем случайный размер массива */
+	srand(time(NULL));
+	int size = rand() % 50 + 1;
+
+	/* Создание массива */
+	//array = (int*)malloc(size * sizeof(int));
+	array = new int[size];
+	if (array != nullptr)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			array[i] = rand() % 50 + 1;
+		}
+	}
+	else
+	printf("Out of memory/");
+
+	/* Печать массива в консоль*/
+	show(array, size);
+	show_back(array, size);
+
+	/* Очищаем память массива */
+	//free(array);
+	delete[] array;
+
+	std::cout << std::endl;
+
+
+
+	//==========================
+	int* array2 = nullptr;  // указатель на массив
+	int rows = 0, columns = 0;
+
+	/* Определяем случайный размер массива */
+	srand(time(NULL));
+	/*rows = rand() % 10 + 2;
+	columns = rand() % 10 + 2;*/
+
+	rows = 4;
+	columns = 4;
+
+	/* Выделение памяти */
+	//array = (int*)malloc(rows * columns * sizeof(int));
+	array2 = new int[rows * columns];
+
+	/* Ввод элементов массива */
+	for (int i = 0; i < rows; i++)  // цикл по строкам
+	{
+		for (int j = 0; j < columns; j++)  // цикл по столбцам
+		{
+			array2[columns * i + j] = rand() % 50 + 1;
+			std::cout << array2[columns * i + j] << '\n';
+		}
+		std::cout << std::endl;
+	}
+
+	pointer_arithmetic(array2, rows, columns);
+
+
+
+	//=================================================
+	replacement(array2, rows, columns);
+
+
+
+
+
+
+	/* Ожидание ввода символа с консоли */
+	getchar();
+
+
+
+
+
+	return 0;
+
+}
