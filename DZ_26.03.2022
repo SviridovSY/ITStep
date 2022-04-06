@@ -1,0 +1,138 @@
+//умножение
+void multiplication(float* r, float* r2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << *r * *r2 << std::endl;
+}
+
+//деление
+void division(float* r, float* r2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << *r / *r2 << std::endl;
+}
+
+//сложение
+void addition(float *r, float *r2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << *r + *r2 << std::endl;
+}
+
+//вычитание
+void subtraction(float* r, float* r2) {
+	std::cout << "Ваш результат:" << std::endl;
+	std::cout << *r - *r2 << std::endl;
+}
+
+void mass(int* ptr)
+{
+	int sum{ 0 };
+	for (int i = 0; i < 5; i++)
+	{
+		sum += *(ptr + i);
+	}
+	std::cout << sum << std::endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	//======1
+	int x{ 3 };
+	int y{ 5 };
+	
+	int* p{ nullptr };
+	int* t{ nullptr };
+
+	p = &x;
+	t = &y;
+	if (*p > *t)
+	{
+		std::cout << *p << std::endl;
+	}
+	else
+	{
+		std::cout << *t << std::endl;
+	}
+	
+
+
+	//======2
+	int z{ 0 };
+	int* w{ nullptr };
+	std::cout << "Введите число: " << std::endl;
+	std::cin >> z;
+	w = &z;
+	std::cout << "Введено число: " << *w << std::endl;
+
+
+	//======3
+	x = 6;
+	y = 12;
+	z = 0;
+	p = nullptr;
+	t = nullptr;
+	w = nullptr;
+
+	p = &x;
+	t = &y;
+	z = *p;
+	x = *t;
+	y = z;
+
+	std::cout << "x = " << x << std::endl;
+	std::cout << "y = " << y << std::endl;
+
+
+	//======4
+	float* r{ nullptr };
+	float* r2{ nullptr };
+
+	char action = '0';
+	float tray_num = 0;
+	float tray_num2 = 0;
+	std::cout << "Пожалуйста введите первое число:" << std::endl;
+	std::cin >> tray_num;
+
+	std::cout << "Пожалуйста введите второе число:" << std::endl;
+	std::cin >> tray_num2;
+
+	std::cout << "Пожалуйста выберите действие:" << std::endl;
+	std::cin >> action;
+
+	r = &tray_num;
+	r2 = &tray_num2;
+
+	if (action == '+')
+	{
+		addition(r, r2);
+	}
+	else if (action == '-')
+	{
+		subtraction(r, r2);
+	}
+	else if (action == '*')
+	{
+		multiplication(r, r2);
+	}
+	else if (action == '/')
+	{
+		division(r, r2);
+	}
+	else
+	{
+		std::cout << "неверное значение" << std::endl;
+	}
+
+
+	//======5
+	int* ptr{ nullptr };
+	int a[] = { 1, 2, 3, 4, 5 };
+	ptr = a;
+
+	mass(ptr);
+
+
+	getchar();
+
+	return 0;
+}
