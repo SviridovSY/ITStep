@@ -1,0 +1,43 @@
+int grade(int x)
+{
+	int y{ 0 };
+	if (x>=90 && x<=100)
+	{
+		y = 5;
+	}
+	else if (x >= 70 && x <= 89)
+	{
+		y = 4;
+	}
+	else if (x >= 50 && x <= 69)
+	{
+		y = 3;
+	}
+	else
+	{
+		y = 2;
+	}
+
+	return y;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	
+	int gr{ 0 };
+
+	for (size_t i = 0; i < 9; i++)
+	{
+		gr = 0;
+		std::cout << "Введите по 100-бальной шкале оценку студента " << i+1 << std::endl;
+		std::cin >> gr;
+		std::cout << "Оценка по 5-бальной шкале = " << grade(gr) << std::endl;
+		std::cout << std::endl;
+	}
+
+	
+	getchar();
+
+	return 0;
+}
