@@ -1,0 +1,139 @@
+
+void mass(int arr[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		int gr = 0;
+		std::cout << "Введите по 100-бальной шкале оценку студента " << i + 1 << std::endl;
+		std::cin >> gr;
+		arr[i] = gr;
+		std::cout << std::endl;
+	}
+}
+
+int rating(int arr[], int n)
+{
+	int sum{ 0 };
+	int max{ 0 };
+	int min{ 0 };
+
+	for (int i = 0; i < n; i++)
+	{
+		if (i == 0)
+		{
+			max = arr[i];
+			min = arr[i];
+		}
+		if (arr[i]>max)
+		{
+			max = arr[i];
+		}
+		if (arr[i] < min)
+		{
+			min = arr[i];
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] != max && arr[i] != min)
+		{
+			sum += arr[i];
+		}
+	}
+
+	return sum;
+}
+
+int grade(int x)
+{
+	int y{ 0 };
+	if (x>=90 && x<=100)
+	{
+		y = 5;
+	}
+	else if (x >= 70 && x <= 89)
+	{
+		y = 4;
+	}
+	else if (x >= 50 && x <= 69)
+	{
+		y = 3;
+	}
+	else
+	{
+		y = 2;
+	}
+
+	return y;
+}
+
+void func_a(int arr2[], int size2)
+{
+	for (size_t i = 0; i < size2; i++)
+	{
+		arr2[i] = rand();
+	}
+}
+
+void func_b(int arr2[], int size2)
+{
+	for (size_t i = 0; i < size2; i++)
+	{
+		std::cout << arr2[i] << std::endl;
+	}
+}
+
+void func_c(int arr2[], int size2)
+{
+	for (size_t i = 0; i < size2; i++)
+	{
+		//for (int i = 2; i <= n; i++) {
+		//	if (i % 2 == 0) { //если номер элемента чётный,
+		//		int tmp = A[i];  //то меняем местами чётный и нечётный элементы
+		//		A[i] = A[i - 1];
+		//		A[i - 1] = tmp;
+		//	}
+		//}
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(0));
+
+	////======1
+	//int arr1[] = {5,3,2,5,4,3,4,1};
+	//int n = sizeof(arr1) / sizeof(arr1[0]);
+	//std::cout << "Среднее значение оценки = " << rating(arr1, n)/n << std::endl;
+	//std::cout << std::endl;
+
+
+	////======2
+	//int gr{ 0 };
+	//const int size{ 8 };
+	//int arr[size];
+	//mass(arr, size);
+	//
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	std::cout << "Оценка студента " << i+1 << " по 5-бальной шкале = " << grade(arr[i]) << std::endl;
+	//	std::cout << std::endl;
+	//}
+
+
+	//======3
+	const int size2{ 12 };
+	int arr2[size2];
+	func_a(arr2, size2);
+	func_b(arr2, size2);
+	func_c(arr2, size2);
+
+
+	
+	getchar();
+
+	return 0;
+}
+ 
