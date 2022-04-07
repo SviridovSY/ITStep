@@ -1,0 +1,69 @@
+setlocale(0, "rus");
+
+	//===1
+	setlocale(LC_ALL, "Russian");
+	int tmp{ 0 };
+	int i, j;
+	int mas[3][3], sum[3];
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			std::cout << "Введите mas[" << i + 1 << "][" << j + 1 << "]=";
+			std::cin >> mas[i][j];
+		}
+	}
+	for (i = 0; i < 3; i++) {
+		sum[i] = 0;
+		for (j = 0; j < 3; j++)
+			sum[i] += mas[j][i];
+	}
+	for (i = 0; i < 3; i++)
+	{
+		
+		if (tmp < sum[i])
+		{
+			tmp = sum[i];
+		}
+		
+		std::cout << "Сумма столбца" << i + 1 << '=' << sum[i] << std::endl;
+
+		
+	}
+	std::cout << "Сумма наибольшая" << tmp << std::endl;
+
+	//===3
+	int mas2[5][5];
+	    srand(time(0));
+	    for (int i = 0; i < 5; i++)
+	    {
+	        for (int j = 0; j < 5; j++)
+	        {
+	            mas2[i][j] = rand() % 101;
+				std::cout << mas2[i][j] << "\t";
+	        }
+			std::cout << std::endl << std::endl;
+	    }
+		std::cout << "-----------------------------------\n\n";
+	    for (int i = 0; i < 5; i++)
+	    {
+	        for (int j = 0, b = 4, a = 1; j < 5; j++, b--)
+	        {
+	            if (j <= 2)
+	            {
+	                mas2[i][j] = mas2[i][b];
+	            }
+	            else
+	            {
+	                mas2[i][j] = mas2[i][a];
+	                a--;
+	            }
+	        }
+			std::cout << std::endl << std::endl;
+	    }
+	    for (int i = 0; i < 5; i++)
+	    {
+	        for (int j = 0; j < 5; j++)
+	        {
+				std::cout << mas2[i][j] << "\t";
+	        }
+			std::cout << std::endl << std::endl;
+	    }
