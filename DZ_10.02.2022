@@ -1,0 +1,77 @@
+int Random(int min, int max) 
+{
+	return min + rand() % (max - min);
+}
+
+void mass(int arr[], int const x)
+{
+	int p{ 0 };
+	int p2{ 0 };
+
+	std::cout << "Введите нижнюю границу: " << std::endl;
+	std::cin >> p;
+	std::cout << std::endl;
+	std::cout << "Введите верхнюю границу: " << std::endl;
+	std::cin >> p2;
+	std::cout << std::endl;
+
+	for (size_t i = 0; i < x; i++)
+	{
+		arr[i] = Random(p, p2);
+	}
+	
+}
+
+void ploshad(float l)//круг
+{
+	std::cout << (l*l) / (4*3.14) << std::endl;
+}
+
+void ploshad(int l, int z)//прямоугольник
+{
+	std::cout << l * z << std::endl;
+}
+
+void ploshad(float l, int z)//треугольник
+{
+	std::cout << 0.5 * z * l << std::endl;
+}
+
+void sred(int arr[], int const x)
+{
+	int sum{ 0 };
+	for (size_t i = 0; i < x; i++)
+	{
+		sum += arr[i];
+	}
+
+	std::cout << sum / x << std::endl;
+}
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+	//===1
+	int const x{ 5 };
+	int arr[x];
+	mass(arr, x);
+	for (size_t i = 0; i < x; i++)
+	{
+		std::cout << arr[i] << std::endl;
+	}
+
+
+	//===2
+	float l{ 23 };
+	int y{ 18 };
+	int z{ 6 };
+	ploshad(l);//длина окружности
+	ploshad(y, z);//стороны прямоугольника
+	ploshad(l, z);//высота и основание треугольника
+
+	//===3
+	sred(arr, x);
+    
+}
