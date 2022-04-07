@@ -1,0 +1,49 @@
+setlocale(0, "rus");
+
+	//===1
+	for (int i = 7; i < 8; ++i)
+	{
+		for (int j = 2; j < 10; ++j)
+		{
+			std::cout << i << " * " << j << " = " << i * j << "\n";
+		}
+	}
+
+	//===2
+	for (int y = 0; y <= 7; y++)
+	{
+		if (y % 2 == 0)
+			for (int x = 1; x <= 4; x++)
+				std::cout << " * " << " ";
+		else
+			for (int x = 1; x <= 4; x++)
+				std::cout << " " << " * ";
+
+		std::cout << std::endl;
+	}
+
+	//===3
+	int i = 0, n; float sr_ar = 0, x = 0, y = 0;
+	std::cout << "» Вводите числа(введите 0 для окончания ввода) «" << std::endl;
+	do
+	{
+		std::cin >> n;
+		if (n != 0)
+		{
+			x++;
+			y += n;
+		}
+		i++;
+	} while (n != 0);
+	sr_ar = y / x;
+	std::cout << "» количество чисел «" << x << std::endl;
+	std::cout << "» сумма чисел «" << y << std::endl;
+	std::cout << "» среднее арифметическое «" << sr_ar << std::endl;
+
+	//===4
+	int number;
+	std::cout << "Введите целое число от 1 до 255: ";
+	std::cin >> number;
+	
+	std::bitset<8> message(number);
+	std::cout << number << " = " << message << std::endl;
