@@ -1,0 +1,31 @@
+	
+  
+  //#include <string.h>     - обязательно
+  
+  
+  
+  const char* cstr = "eeergggeg rgergerg rgrrgeg 3 - ergrgegegeg";
+
+	size_t podchet{ strlen(cstr) };//strlen - получает количество символов в строке
+	size_t schet{ 0 };
+
+	const int razmer{ 256 };
+	char slovo[razmer]{ 0 };//создаётся массив символов и обнуляется, в каждый элемент записывается 0
+
+	
+	const char* pre_position{ cstr };
+
+	const char* position{ strchr(cstr, ' ') };//strchr - находит первый указанный символ
+	while (position != nullptr)
+	{	
+		strncpy_s(slovo, pre_position, position - pre_position); //копирует слово
+		std::cout << slovo << std::endl;
+		pre_position = position+1;
+		
+		schet++;
+		position = strchr(++position, ' ');
+	}
+
+	std::cout << pre_position << std::endl;
+
+	std::cout << schet + 1 << std::endl;
