@@ -32,3 +32,17 @@ int main(){
     c.show();
     return 0;
 }
+
+
+
+fraction fraction::operator+(const fraction& obj)
+{
+	int y = obj.denominator * denominator;
+	int x = (this->numerator * (y / this->denominator)) + (obj.numerator * (y / obj.denominator));
+
+	int e = this->numerator * obj.denominator + this->denominator * obj.numerator;
+	int k = this->denominator * obj.denominator;
+	//e = A * D + B * C;
+	//k = B * D;
+	return fraction(e, k);
+}
