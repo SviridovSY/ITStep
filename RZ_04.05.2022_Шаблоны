@@ -1,0 +1,138 @@
+#include <iostream>
+
+template <typename T>
+void minimal(T* arr, int size)
+{
+    T min;
+    min = arr[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    std::cout << min << std::endl;
+}
+
+template <typename T2>
+void maximum(T2* arr, int size)
+{
+    T2 max;
+    max = arr[0];
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    std::cout << max << std::endl;
+}
+
+template <typename T3>
+void sort(T3* arr, int size)
+{
+    T3 temp; 
+    for (int i = 0; i < size - 1; i++) 
+    {
+        for (int j = 0; j < size - i - 1; j++) 
+        {
+            if (arr[j] > arr[j + 1]) 
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < size; i++) 
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+template <typename T4>
+void search(T4* arr, int size, int key)
+{
+    int l = 0;            
+    int u = size - 1;  
+
+    while (l <= u) {
+        int m = (l + u) / 2;
+        if (arr[m] == key) 
+        {
+            std::cout << "Element index: " << m << std::endl;
+            break;
+        }
+        if (arr[m] < key)
+        {
+            l = m + 1;
+
+        }
+        if (arr[m] > key)
+        {
+            u = m - 1;
+        }
+    }
+}
+
+template <typename T5>
+void replacement(T5* arr, int size, int key, T5 znach)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        if (i==key)
+        {
+            arr[i] = znach;
+        }
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+    srand((unsigned int)time(NULL));
+
+    const int size{ 5 };
+    int znach{ 53 };//для примера переменная int
+    int key{ 2 };
+    int arr[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = rand() % 9;
+        std::cout << arr[i] << "  ";
+    }
+   
+    //===1
+    std::cout << std::endl;
+    maximum(arr, size);
+
+    //===2
+    std::cout << std::endl;
+    minimal(arr, size);
+
+    //===3
+    std::cout << std::endl;
+    sort(arr, size);
+
+    //===4
+    std::cout << std::endl;
+    search(arr, size, key);
+
+    //===5
+    std::cout << std::endl;
+    replacement(arr, size, key, znach);
+
+
+	return 0;
+}
