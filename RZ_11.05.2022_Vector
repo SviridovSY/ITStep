@@ -1,0 +1,155 @@
+#include <iostream>
+//#include <fstream>
+#include <string.h>
+//#include <Windows.h>
+//#include <cstdlib>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+
+//#include <math.h>
+
+#include "book.h"   
+#include "my_string.h"
+#include "fraction.h"
+#include "Date.h"
+
+#include "MyVector.h"
+#include <vector>
+
+
+
+
+
+
+
+
+int main() {
+	setlocale(LC_ALL, "RUSSIAN");
+
+	
+
+	MyVector<int> first(10), second(10);
+	//first.MyVector(10);
+
+	/*for (size_t i = 0; i < 10; i++)
+	{
+		first.push_front(i);
+		second.push_back(i);
+	}
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	first += second;
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	for (size_t i = 0; i < 3; i++)
+		first.pop_back();
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	for (size_t i = 0; i < 3; i++)
+		first.pop_front();
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	std::cout << first.csize() << std::endl << first.max_size() << std::endl << std::endl;
+
+	first.resize(6);
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	second.resize(15);
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	first.erase();
+	std::cout << first << std::endl << second << std::endl << std::endl;
+
+	second += first;
+	first.swap(second);
+	std::cout << first << std::endl << second << std::endl << std::endl;*/
+
+	return 0;
+}
+
+
+
+
+
+#pragma once
+#include <iostream>
+
+constexpr auto PAGE_SIZE = 5;
+constexpr auto MAX_ELEM_PER_PAGE(size_t tsize) { return (tsize / PAGE_SIZE + 1) * PAGE_SIZE; }
+
+template <class T>
+class MyVector
+{
+private:
+	T* array_buffer;
+	size_t size;
+public:
+	//Конструкторы
+	MyVector();
+	MyVector(const size_t size);
+	//// Копирование
+	MyVector(const MyVector& obj);
+	//MyVector<T>& operator= (const MyVector<T>& obj);
+	//// Перенос
+	//MyVector(const MyVector&& obj);
+	//MyVector<T>& operator= (MyVector<T>&& obj);
+
+	//MyVector<T>& operator+= (MyVector<T>& obj);
+	//T operator[](size_t count);
+
+	//bool empty() const; // Проверяет заполнен ли вектор.
+	//const size_t csize() const; // Возвращает количество данных.
+	//size_t max_size() const; // Возвращает количество данных до перевыделения памяти.
+	//void resize(const size_t size); // Изменяет размер массива и данных.
+	void erase(); // Очищает данные из массива.
+	//void swap(MyVector<T>& obj); // Обменивает данные в объектах.
+
+	//void push_back(const T& data); // Добавления нового элемента в конец вектора
+	//void pop_back(); // Удалить последний элемент
+
+	//void push_front(const T& data); // Добавления нового элемента в начало вектора
+	//void pop_front(); // Удалить первый элемент
+
+	//// Оператор потока
+	//template <class U>
+	//friend std::ostream& operator<< (std::ostream& os, const MyVector<U>& obj);
+
+	~MyVector(); // Деструктор
+};
+
+template<class T>
+inline MyVector<T>::MyVector()
+{
+	array_buffer = nullptr;
+	size = 0;
+}
+
+template<class T>
+inline MyVector<T>::MyVector(const size_t size)
+{
+	//size = 10;
+	srand(time(NULL));
+	for (size_t i = 0; i < size-1; i++)
+	{
+		this->array_buffer[i] = rand() % 100 + 1;
+	}
+}
+
+template<class T>
+inline MyVector<T>::MyVector(const MyVector& obj)
+{
+
+}
+
+template<class T>
+inline void MyVector<T>::erase()
+{
+	size = 0;
+}
+
+template<class T>
+inline MyVector<T>::~MyVector()
+{
+	delete[] array_buffer;
+}
